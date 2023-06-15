@@ -1,0 +1,805 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/*usuwa domyślne style przeglądarki */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color:rgb(249, 247, 255);
+}
+
+.display-none {
+    display: none;
+}
+
+.only-mobile {
+    display: none;
+}
+
+#only-mobile {
+    display: none;
+}
+
+
+/*CSS dla headera i nawigacji*/
+
+header * {
+    background-color: inherit;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    opacity: 97%;
+    background-color: inherit;
+}
+
+.header-blue {
+    background-color: #74c2ff;
+    height: 8px;
+    width: 100%;
+}
+
+.header-white {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    padding: 0px 80px;
+}
+
+.burger-menu, .cross-sign {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin: 0 25px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links {
+    font-size: 20px;
+    color: #4A4A4A;
+}
+
+.nav-list a:hover, :focus {
+color: black;
+}
+
+.current-site {
+    font-weight: 600;
+}
+
+.o-projekcie {
+    margin-right: 0px;
+}
+
+.webpage-title {
+    margin-right: 15px;
+    font-size: 24px;
+    color: rgb(19, 19, 19);
+}
+
+
+/*CSS dla wyszukiwarki */
+
+.wyszukiwarka {
+    height: 50px;
+    width: 676px;
+    border: solid 3px #74c2ff;
+    border-radius: 40px;
+    margin: 170px auto 45px auto;
+}
+
+.wyszukiwarka-subpage{
+    margin: 68px auto 45px auto;
+}
+
+.site-motto {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+    margin: 9px 5px;
+}
+
+.wyszukiwarka img {
+    position: relative;
+    width: 22px;
+    top: -33px;
+    left: 15px;
+}
+
+
+/*CSS dla głownej części strony */
+
+main {
+    width: 100%;
+    padding: 10px 20px;
+    margin: auto;  
+}
+
+.najpopularniejsze-pytania-section, .kategorie-section, .kategorie-scroll-section {
+    padding: 5px 0px;
+}
+
+.kategorie-scroll-section {
+    width: 1380px;
+    margin: auto;
+}
+
+.najpopularniejsze-pytania {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.kategorie-section-header {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 700;
+    margin:5px 30px -4px 30px;
+}
+
+.content-row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.kategorie-scroll-section .content-row {
+    overflow-x: auto; 
+    overflow-y: hidden;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;  /* IE i Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/*pozbywa się scrollbaru w przewijaniu horyzontalnym */
+.kategorie-scroll-section .content-row::-webkit-scrollbar { /* Chrome, Safari, Opera */
+    display: none; 
+}
+
+.content-row-link-element {
+    text-decoration: none;
+}
+
+.content-row article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 325px;
+    height: 185px;
+    border: solid 1px #707070;
+    border-radius: 29px;
+    margin: 15px 10px;
+    animation-name: article-shadow-out;
+    animation-duration: 0.3s;
+    animation-fill-mode:forwards;
+}
+
+.content-container {
+    width: 287px;
+}
+
+.content-row article:hover, .sources-link-body:hover {
+    animation-name: article-shadow-in;
+    animation-duration: 6s;
+    animation-fill-mode:forwards;
+}
+
+.kategorie-section article {
+    border-radius: 14px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    /*wcześniej był tu grid, usunięty ze względu na brak kompatybilności ze starszymi przeglądarkami*/
+}
+
+.category-container h3 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #232323;
+}
+
+.content-container h3 {
+    height: 62px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #232323;
+    border-bottom: solid 1px #707070;
+    padding-bottom: 11px;
+    margin-bottom: 11px;
+}
+
+.content-row article p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #232323;
+    height: 80px;
+    display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/*CSS dla stopki */
+
+.footer {
+    display: block;
+    background-color: #74c2ff;
+    height: 112px;
+    width: 100%; 
+    margin-top: 80px; 
+}
+
+
+
+/*===================
+  PODSTRONA KATEGORII
+  ===================*/
+
+.strona-kategorii-section {
+    margin: auto;
+ }
+
+ .nazwa-kategorii {
+     display: block;
+     text-align: center;
+     font-size: 2.4em;
+     font-weight: 600;
+ }
+
+ .opis-kategorii {
+     width: 700px;
+     text-align: justify;
+     display: block;
+     margin: auto;
+     margin-bottom: 6px;
+     font-size: 15px;
+ }
+
+ .content-row-kategorie {
+     justify-content: center;
+ }
+
+ .subcategory-header-container {
+    display: flex;
+    justify-content: center;
+    animation-name: subcategory-header-animation-out; 
+    animation-duration: 0.2s;
+    animation-fill-mode:forwards;
+ }
+
+ @keyframes subcategory-header-animation-out {
+    0% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+ }
+
+.subcategory-link-element:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in;
+    
+}
+
+ .subkategorie-header {
+    text-align: center;
+    font-size: 1.5em;
+    margin: auto;
+}
+
+ .subcategory-link-element p {
+     text-align: center;
+     color: #666666;
+     font-size: 14px;
+}
+
+
+
+/*===================
+  PODSTRONA SUBKATEGORII
+  ===================*/
+
+.nazwa-subkategorii {
+    font-size: 1.6em;
+     font-weight: 700;
+}
+
+.opis-subkategorii {
+    width: 600px;
+    font-size: 12px;
+}
+
+
+
+/*wersja dla mniejszych ekranów laptopów (13-12 cali) 1080p z powiększeniem 150%*/
+
+@media (max-width: 1440px) {
+
+
+    /*CSS dla headera i nawigacji*/
+
+    .webpage-title {
+        font-size: 18px;
+    }
+    .header-blue {
+        height: 6.4px;
+    }
+
+    .header-white {
+        height: 51px;
+        padding: 12px 100px;
+    }
+
+    .nav-list li {
+        margin: 0px 20px;
+    }
+
+    .nav-list a {
+        font-size: 16px;
+    }
+
+
+    /*CSS dla body */
+
+    main {
+        padding: 8px 16px;
+    }
+
+    .wyszukiwarka {
+        height: 39px;
+        width: 540.8px;
+        border: solid 2px #74c2ff;
+        border-radius: 40px;
+        margin: 136px auto 43px auto;
+    }
+    .wyszukiwarka-subpage{
+        margin: 60px auto 45px auto;
+    }
+
+    .site-motto {
+        text-align: center;
+        font-size: 13.6px;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+        opacity: 0.8;
+        margin: 7px 7px;
+    }
+
+    .wyszukiwarka img {
+        position: relative;
+        width: 17.5px;
+        top: -27px;
+        left: 11px;
+    }
+
+    .najpopularniejsze-pytania-section, .kategorie-section, .kategorie-scroll-section {
+        padding: 4px 0px;
+    }
+
+    .kategorie-scroll-section {
+        width: 1104px;
+    }
+
+    .najpopularniejsze-pytania {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    .kategorie-section-header {
+        font-size: 25px;
+        margin: 4px 24px -2px 24px;
+    }
+
+    .content-row article {
+        width: 260px;
+        height: 153px;
+        border: solid 1px #707070;
+        border-radius: 23px;
+        margin: 12px 8px;
+    }
+    .content-container {
+        width: 229px;
+    }
+
+    .kategorie-section article {
+        border-radius: 11px;
+    }
+
+    .category-container h3 {
+        font-size: 27px;
+    }
+
+    .content-container h3 {
+        height: 49.5px;
+        font-size: 13px;
+        border-bottom: solid 1px #707070;
+        padding-bottom: 9px;
+        margin-bottom: 9px;
+    }
+
+    .content-row article p {
+        font-size: 11px;
+        height: 64px;
+    }
+
+
+    /*CSS dla stopki */
+    .footer {
+        height: 89px; 
+        margin-top: 64px;
+    }
+
+
+
+    /*===================
+      PODSTRONA KATEGORII
+      ===================*/
+
+    .nazwa-kategorii {
+        font-size: 1.92em;
+    }
+
+    .opis-kategorii {
+        width: 560px;
+        font-size: 12px;
+    }
+
+    .subkategorie-header {
+        font-size: 1.2em;
+    }
+
+    .subcategory-link-element p {
+        font-size: 12px;
+    }
+
+
+
+    /*===================
+      PODSTRONA SUB-KATEGORII
+      ===================*/
+
+    .nazwa-subkategorii {
+        font-size: 1.4em;
+        font-weight: 700;
+    }
+
+    .opis-subkategorii {
+        width: 480px;
+        font-size: 11px;
+    }
+}
+
+
+
+/*3 elementy w rzędzie zamiast 4, dla tabletów w trybie horyzontalnym*/
+
+@media (max-width: 1152px) {
+    
+    .hide-tablet {
+        display: none;
+    }
+
+    .kategorie-scroll-section {
+        width: 830px;   
+    }
+}
+
+
+
+/*2 elementy w rzędzie zamiast 4, dla tabletów w trybie portretowym*/
+
+@media (max-width: 875px) {
+
+    .main-wrapper {
+        max-width: 600px;
+    }
+
+    .nav-list li {
+        margin: 0 12px;
+    }
+
+    .hide-tablet {
+        display: flex;
+    }
+
+    .kategorie-scroll-section {
+        width: 560px;   
+    }
+
+    .opis-kategorii {
+        width: auto;
+    }
+}
+
+
+
+/*burger menu*/
+
+@media screen and (max-width:760px) {
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .webpage-title {
+        Position: absolute;
+        top: 9px;
+        left: 20px;
+
+    }
+
+    .burger-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        z-index: 100;
+    }
+    
+    .top-nav {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 120vh; /*może powodować problemy*/
+        background-color: rgb(32, 32, 32);
+        z-index: 8;
+        padding: 50px 15px;
+        opacity: 1;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+    
+    }
+
+    .top-nav-active {
+        transform: translateX(0%);
+        transition: transform 0.4s ease-out;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        font-size: 35px;
+    }
+
+    .nav-list li {
+        opacity: 0;
+    }
+
+    .nav-list a {
+        color: #ffffff;
+    }
+
+    .nav-list a:hover {
+    color: #74c2ff;
+    }
+}
+
+
+    
+
+
+
+
+/*widok mobilny*/
+
+@media screen and (max-width:602px) {
+    
+    .only-mobile {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .site-motto-mobile {
+        margin: auto;
+        margin-top: 80px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        opacity: 0.8;
+    }
+    
+    .wyszukiwarka {
+        display: flex;
+        height: auto;
+        width: auto;
+        margin: 8px 0px 20px 0px;
+    }
+
+    .wyszukiwarka img {
+        position: relative;
+        width: 17.5px;
+        top: 0px;
+        left: 12px;
+    }
+
+    .kategorie-scroll-section {
+        width: 100%;
+    }
+
+    .najpopularniejsze-pytania {
+        font-size: 1.1em;
+        margin-bottom: 0;
+    }
+
+    .kategorie-section {
+        position: static;
+        top: -500px;
+    }
+
+    .kategorie-section-header {
+        font-size: 25px;
+        text-align: center;
+        margin: 5px 24px -3px 24px;
+    }
+
+    .kategorie-scroll-section .content-row {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content-row-link-element {
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .content-row article {
+        display: flex;
+        flex: 1;
+        height: auto;
+        width: auto;
+        margin: 8px 8px;
+        padding: 12px 20px;
+    }
+
+    .content-container {  
+        width: auto;
+    }
+
+    .category-container h3 {
+        font-size: 18px;
+    }
+
+    .all-categories-button h2 {
+        font-weight: bold;
+    }
+
+    .content-row article h3 {
+        height: auto;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+        color: #232323;
+        border-bottom: solid 1px #707070;
+        padding-bottom: 11px;
+        margin-bottom: 11px;
+    }
+    
+    .content-row article p {
+        font-size: 11px;
+        font-weight: 400;
+        height: auto;
+       -webkit-line-clamp: 3; /* number of lines to show */
+    }
+
+    .bottom-mobile-nav {
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 58px;
+        width: 100%;
+        background-color: #0084EC;
+        z-index: 4;
+    }
+
+    .bottom-mobile-nav a {
+        text-align: center;
+        line-height: 1.1;
+        width: 120px;
+        font-weight: 700;
+        color: white;
+        background-color: inherit;
+    }
+    
+    .separator {
+        height: 36px;
+        width: 3px;
+        background-color: White;
+    }
+
+    .footer {
+    margin: 0;
+    height: 150px;
+    }
+
+
+
+    /*CSS dla podstrony kategorii*/
+
+    .strona-kategorii-section {
+        margin: auto;
+     }
+     
+     .nazwa-kategorii {
+         display: block;
+         text-align: center;
+         font-size: 1.6em;
+         font-weight: 600;
+     }
+
+     .opis-kategorii {
+         font-size: 12px;
+     }
+
+     .subkategorie-header {
+        font-size: 1.1em 
+     }
+}
+
+/*animacje*/
+@keyframes article-shadow-in {
+    0% {box-shadow: 0px 0px 0px #74c2ff;}
+    5% {box-shadow: 0px 0px 20px #74c2ff; transform:scale(1.05);}
+    30% {box-shadow: 0px 0px 25px #7489ff; transform:scale(1.05);}
+    55% {box-shadow: 0px 0px 18px #ea62fc; transform:scale(1.05);}
+    80% {box-shadow: 0px 0px 22px #ff8352; transform:scale(1.05);}
+    100% {box-shadow: 0px 0px 20px #74c2ff; transform:scale(1.05);}
+}
+@keyframes article-shadow-out {
+    0% {box-shadow: 0px 0px 20px #74c2ff; transform:scale(1.05);}
+    100% {box-shadow: 0px 0px 0px #74c2ff;}
+}
+
+@keyframes burgerAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+/*obejście dla IE10*/
+@supports (-webkit-line-clamp: 4) {
+    .content-row article p {
+        height: auto;
+    }
+}

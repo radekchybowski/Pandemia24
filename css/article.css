@@ -1,0 +1,230 @@
+    /*===========================
+      CSS dla podstrony artykułu
+    =============================*/
+
+
+/*sekcja z treścią artykułu*/
+
+.article-wrapper {
+    width: 913px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.article-title {
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+
+.article-container p, .article-container ul, ol{
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.article-container ul, ol {
+    margin: 7px 0px 22px 80px;
+}
+
+.article-container li {
+    margin-bottom: 5px;
+}
+.article-container img{
+    width: 100%
+}
+
+.img-caption {
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+
+
+/*sekcja z linkami do źródeł*/
+
+.sources-container {
+    margin-top: 30px;
+}
+
+.sources-title {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.sources-links-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sources-link-body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(94, 94, 94);
+    border-radius: 14px;
+    margin: 0px 15px;
+    animation-name: article-shadow-out;
+    animation-duration: 0.3s;
+    animation-fill-mode:forwards;
+}
+
+.sources-link-img {
+    width: 75px;
+    margin: 17px 0px 17px 17px;
+}
+
+.sources-link-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 17px;
+}
+
+
+/*powrót do góry*/
+
+.page-up-link {
+    width: 300px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.page-up-link:hover {
+    transform: scale(1.05);
+    
+}
+.page-up-img {
+    width: 28px;
+}
+
+.page-up-title {
+    font-size: 20px;
+    font-weight: 700;
+    color:#575757;
+}
+
+footer {
+    margin: auto;
+}
+
+.footer {
+    margin-top: 15px;
+}
+
+
+/*wersja dla mniejszych ekranów laptopów (13-12 cali) 1080p z powiększeniem 150%*/
+
+@media (max-width: 1440px) {
+
+    /*sekcja z treścią artykułu*/
+
+    .article-wrapper {
+        width: 730px;
+        margin-top: 72px;
+    }
+
+    .article-title {
+        font-size: 26px;
+        margin-bottom: 22.4px;
+    }
+
+    .article-container p, .article-container ul, ol{
+        font-size: 14.4px;
+        line-height: 1.7;
+        margin-bottom: 12px;
+    }
+
+    .article-container ul, ol {
+        margin: 6px 0px 18px 64px;
+    }
+
+    .article-container li {
+        margin-bottom: 4px;
+    }
+
+    .img-caption {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+
+
+    /*sekcja z linkami do źródeł*/
+
+    .sources-container {
+        margin-top: 24px;
+    }
+
+    .sources-title {
+        font-size: 18.4px;
+        margin-bottom: 20px;
+    }
+
+    .sources-link-body {
+        border-radius: 11px;
+        margin: 0px 12px;
+    }
+
+    .sources-link-img {
+        width: 60px;
+        margin: 13.6px 0px 13.6px 13.6px;
+    }
+
+    .sources-link-title {
+        font-size: 10.4px;
+        margin: 13.6px;
+    }
+
+
+    /*powrót do góry*/
+
+    .page-up-link {
+        width: 240px;
+        margin-top: 48px;
+    }
+
+    .page-up-link:hover {
+        transform: scale(1.04);
+        
+    }
+    .page-up-img {
+        width: 22.4px;
+    }
+
+    .page-up-title {
+        font-size: 16px;
+    }
+
+    .footer {
+        margin-top: 12px;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .article-wrapper {
+        width: auto;
+    }
+}
+
+@media screen and (max-width:602px) {
+    .article-wrapper {
+        margin-top: 50px;
+    }
+    
+    .article-title {
+        font-size: 23px;
+        margin-bottom: 15px;
+    }
+
+    .sources-links-container {
+        display: block;
+    }
+
+    .sources-link-body {
+        margin-bottom: 12px;
+    }
+}
